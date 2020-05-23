@@ -2,6 +2,6 @@
 
 All notable changes to this project will be documented in this file.
 
-## 0.2.0 - 05/23/2020
+## 0.2.1 - 05/23/2020
 
 - first working version.

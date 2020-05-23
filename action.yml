@@ -21,6 +21,10 @@ inputs:
     description: 'some URL endpoint to clean up resources.'
     required: true
     default: ''
+  headers:
+    description: 'headers JSON string.'
+    required: false
+    default: ''
   payload:
     description: 'payload JSON string.'
     required: false

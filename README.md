@@ -27,5 +27,6 @@ jobs:
           expiryMins: 1440 # after X minutes, invoke the below URL endpoint.
           method: 'POST' # one of these methods: GET, POST, PUT, PATCH, DELETE
           url: https://some.cleanup.api.endpoint # some URL endpoint to clean up resources.
+          headers: '' # headers (JSON string).
           payload: '{ "someResourceId": 1234 }' # payload for url (JSON string).
 ```

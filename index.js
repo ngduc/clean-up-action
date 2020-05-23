@@ -15,7 +15,8 @@ async function run() {
     const projectId = core.getInput('projectId');
     const expiryMins = core.getInput('expiryMins');
     const url = core.getInput('url');
-    const payload = core.getInput('payload');
+    const headers = core.getInput('headers') || '';
+    const payload = core.getInput('payload') || '';
     const method = core.getInput('method') || 'GET';
 
     await fetch('https://clean-up-action-v1.gha.workers.dev/?projectId=' + projectId, {
@@ -27,6 +28,7 @@ async function run() {
         expiryMins,
         method,
         url: url,
+        headers,
         payload: method !== 'GET' ? payload : '',
         createdAt: new Date().toISOString()
       })
