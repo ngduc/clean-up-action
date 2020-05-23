@@ -1,6 +1,6 @@
 {
   "name": "clean-up-action",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Clean up resources after X minutes.",
   "main": "index.js",
   "scripts": {

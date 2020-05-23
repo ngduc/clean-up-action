@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const fetch = require('isomorphic-fetch');
+const fetch = require('node-fetch');
 // const wait = require('./wait');
 
 // most @actions toolkit packages have async methods
@@ -10,6 +10,7 @@ async function run() {
     // core.debug((new Date()).toTimeString())
     // await wait(parseInt(ms));
     // core.debug((new Date()).toTimeString())
+    console.log('v0.0.9');
     console.log('Adding this to online queue...');
 
     const userId = core.getInput('userId');
