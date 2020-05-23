@@ -5,20 +5,24 @@ branding:
   icon: 'activity'
   color: 'blue'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
-  userId:
-    description: 'unique user id acquired from ngduc/clean-up-action'
+  projectId:
+    description: 'your unique projectId, example: myProjectId1'
     required: true
     default: ''
   expiryMins:
-    description: 'expiry time in minutes'
+    description: 'after X minutes, invoke the below URL endpoint.'
     required: true
     default: 1440
   getUrl:
-    description: 'URL to trigger with GET method after expiryMins'
+    description: 'some URL endpoint to clean up resources.'
+    required: false
+    default: ''
+  postUrl:
+    description: 'some URL endpoint to clean up resources.'
+    required: false
+    default: ''
+  postPayload:
+    description: 'POST payload JSON string.'
     required: false
     default: ''
 outputs:

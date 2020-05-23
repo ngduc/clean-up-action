@@ -12,14 +12,14 @@ async function run() {
     // core.debug((new Date()).toTimeString())
     console.log('Adding to online timer queue...');
 
-    const userId = core.getInput('userId');
+    const projectId = core.getInput('projectId');
     const expiryMins = core.getInput('expiryMins');
     const getUrl = core.getInput('getUrl');
     const postUrl = core.getInput('postUrl');
     const postPayload = core.getInput('postPayload');
     const method = getUrl ? 'GET' : 'POST';
 
-    await fetch('https://clean-up-action-v1.gha.workers.dev/?userId=' + userId, {
+    await fetch('https://clean-up-action-v1.gha.workers.dev/?projectId=' + projectId, {
       method,
       headers: {
         "Content-Type": "application/json; charset=utf-8",

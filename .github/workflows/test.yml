@@ -30,7 +30,7 @@ jobs:
       - name: cleanup
         uses: ngduc/clean-up-action@master
         with:
-          userId: setYourUserId # set your userId, example: userNameProjectName
-          expiryMins: 1 # after X minutes, invoke the below URL endpoint.
+          projectId: setYourProjectId # set your unique projectId, example: myProjectId1
+          expiryMins: 1440 # after X minutes, invoke the below URL endpoint.
           postUrl: https://some.cleanup.api.endpoint # some URL endpoint to clean up resources.
-          postPayload: '{ "someResourceId": 1234 }'
+          postPayload: '{ "someResourceId": 1234 }' # payload for postUrl (JSON string).
