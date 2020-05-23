@@ -81,21 +81,23 @@ async function run() {
     const headers = core.getInput('headers') || '';
     const payload = core.getInput('payload') || '';
     const method = core.getInput('method') || 'GET';
-
+    
+    const apiBody = JSON.stringify({
+      expiryMins,
+      method,
+      url,
+      headers,
+      payload: method !== 'GET' ? payload : '',
+      createdAt: new Date().toISOString()
+    })
     await fetch('https://clean-up-action-v1.gha.workers.dev/?projectId=' + projectId, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       },
-      body: JSON.stringify({
-        expiryMins,
-        method,
-        url: url,
-        headers,
-        payload: method !== 'GET' ? payload : '',
-        createdAt: new Date().toISOString()
-      })
+      body: apiBody
     })
+    console.log('apiBody', apiBody);
     console.log(`Added. After ${expiryMins} mins, trigger this URL: ${method} ${url} ${payload}`);
 
     core.setOutput('time', new Date().toTimeString());
