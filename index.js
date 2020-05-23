@@ -27,14 +27,16 @@ async function run() {
       payload: method !== 'GET' ? payload : '',
       createdAt: new Date().toISOString()
     })
-    await fetch('https://clean-up-action-v1.gha.workers.dev/?projectId=' + projectId, {
+    const res = await fetch('https://clean-up-action-v1.gha.workers.dev/?projectId=' + projectId, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       },
       body: apiBody
     })
-    console.log('apiBody', apiBody);
+    const resJson = await res.json();
+    console.log('Scheduler payload', apiBody);
+    console.log('Scheduler result', resJson);
     console.log(`Added. After ${expiryMins} mins, trigger this URL: ${method} ${url} ${payload}`);
 
     core.setOutput('time', new Date().toTimeString());
