@@ -1,6 +1,9 @@
-name: 'Clean Up'
+name: 'Clean Up Resources'
 author: 'Duc N'
 description: 'Clean up resources after X minutes.'
+branding:
+  icon: 'activity'
+  color: 'blue'
 inputs:
   milliseconds:  # id of input
     description: 'number of milliseconds to wait'
