@@ -77,25 +77,24 @@ async function run() {
 
     const projectId = core.getInput('projectId');
     const expiryMins = core.getInput('expiryMins');
-    const getUrl = core.getInput('getUrl');
-    const postUrl = core.getInput('postUrl');
-    const postPayload = core.getInput('postPayload');
-    const method = getUrl ? 'GET' : 'POST';
+    const url = core.getInput('url');
+    const payload = core.getInput('payload');
+    const method = core.getInput('method') || 'GET';
 
     await fetch('https://clean-up-action-v1.gha.workers.dev/?projectId=' + projectId, {
       method,
       headers: {
-        "Content-Type": "application/json; charset=utf-8",
+        "Content-Type": "application/json; charset=utf-8"
       },
       body: JSON.stringify({
         expiryMins,
-        getUrl: getUrl,
-        postUrl: postUrl,
-        postPayload: postUrl ? postPayload : '',
+        method,
+        url: url,
+        payload: method !== 'GET' ? payload : '',
         createdAt: new Date().toISOString()
       })
     })
-    console.log(`Added. After ${expiryMins} mins, trigger this URL: ${method} ${getUrl || postUrl} ${postPayload}`);
+    console.log(`Added. After ${expiryMins} mins, trigger this URL: ${method} ${url} ${payload}`);
 
     core.setOutput('time', new Date().toTimeString());
   } 

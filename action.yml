@@ -12,17 +12,17 @@ inputs:
   expiryMins:
     description: 'after X minutes, invoke the below URL endpoint.'
     required: true
-    default: 1440
-  getUrl:
+    default: '1440'
+  method:
+    description: 'one of these methods: GET, POST, PUT, PATCH, DELETE.'
+    required: true
+    default: 'GET'
+  url:
     description: 'some URL endpoint to clean up resources.'
-    required: false
+    required: true
     default: ''
-  postUrl:
-    description: 'some URL endpoint to clean up resources.'
-    required: false
-    default: ''
-  postPayload:
-    description: 'POST payload JSON string.'
+  payload:
+    description: 'payload JSON string.'
     required: false
     default: ''
 outputs:
