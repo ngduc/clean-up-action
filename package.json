@@ -1,7 +1,7 @@
 {
-  "name": "javascript-action",
-  "version": "1.0.0",
-  "description": "JavaScript Action Template",
+  "name": "clean-up-action",
+  "version": "0.0.1",
+  "description": "Clean up resources after X minutes.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
@@ -17,12 +17,12 @@
     "Actions",
     "JavaScript"
   ],
-  "author": "GitHub",
+  "author": "Duc N",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/ngduc/clean-up-action/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/ngduc/clean-up-action",
   "dependencies": {
     "@actions/core": "^1.1.1"
   },
