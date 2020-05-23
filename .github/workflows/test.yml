@@ -30,7 +30,7 @@ jobs:
       - name: cleanup
         uses: ngduc/clean-up-action@master
         with:
-          userId: userId1 # must use your user id acquired from the clean-up-action repo.
-          expiryMins: 1 # after X minutes, call getUrl
-          postUrl: https://end53hx4vqglh.x.pipedream.net/
-          postPayload: '{ "test": 777 }'
+          userId: setYourUserId # set your userId, example: userNameProjectName
+          expiryMins: 1 # after X minutes, invoke the below URL endpoint.
+          postUrl: https://end53hx4vqglh.x.pipedream.net/ # some URL endpoint to clean up resources.
+          postPayload: '{ "someResourceId": 1234 }'

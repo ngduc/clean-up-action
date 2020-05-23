@@ -10,17 +10,17 @@ async function run() {
     // core.debug((new Date()).toTimeString())
     // await wait(parseInt(ms));
     // core.debug((new Date()).toTimeString())
-    console.log('v0.1.0');
-    console.log('Adding this to online queue...');
+    console.log('Adding to online timer queue...');
 
     const userId = core.getInput('userId');
     const expiryMins = core.getInput('expiryMins');
     const getUrl = core.getInput('getUrl');
     const postUrl = core.getInput('postUrl');
     const postPayload = core.getInput('postPayload');
+    const method = getUrl ? 'GET' : 'POST';
 
     await fetch('https://still-sky-c17a.gha.workers.dev/?userId=' + userId, {
-      method: 'POST',
+      method,
       headers: {
         "Content-Type": "application/json; charset=utf-8",
       },
@@ -32,7 +32,7 @@ async function run() {
         createdAt: new Date().toISOString()
       })
     })
-    console.log(`Added. After ${expiryMins} mins, trigger this URL: ${getUrl || postUrl}`);
+    console.log(`Added. After ${expiryMins} mins, trigger this URL: ${method} ${getUrl || postUrl} ${postPayload}`);
 
     core.setOutput('time', new Date().toTimeString());
   } 
