@@ -68,7 +68,7 @@ const fetch = __webpack_require__(454);
 // most @actions toolkit packages have async methods
 async function run() {
   try { 
-    // const ms = core.getInput('milliseconds');6
+    // const ms = core.getInput('milliseconds');
     // console.log(`Waiting ${ms} milliseconds ...`)
     // core.debug((new Date()).toTimeString())
     // await wait(parseInt(ms));
@@ -82,7 +82,7 @@ async function run() {
     const postPayload = core.getInput('postPayload');
     const method = getUrl ? 'GET' : 'POST';
 
-    await fetch('https://still-sky-c17a.gha.workers.dev/?userId=' + userId, {
+    await fetch('https://clean-up-action-v1.gha.workers.dev/?userId=' + userId, {
       method,
       headers: {
         "Content-Type": "application/json; charset=utf-8",

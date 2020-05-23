@@ -19,7 +19,7 @@ async function run() {
     const postPayload = core.getInput('postPayload');
     const method = getUrl ? 'GET' : 'POST';
 
-    await fetch('https://still-sky-c17a.gha.workers.dev/?userId=' + userId, {
+    await fetch('https://clean-up-action-v1.gha.workers.dev/?userId=' + userId, {
       method,
       headers: {
         "Content-Type": "application/json; charset=utf-8",

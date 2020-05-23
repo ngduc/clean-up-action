@@ -25,6 +25,6 @@ jobs:
         with:
           userId: setYourUserId # set your userId, example: userNameProjectName
           expiryMins: 1 # after X minutes, invoke the below URL endpoint.
-          postUrl: https://some.cleanup.endpoint # some URL endpoint to clean up resources.
+          postUrl: https://some.cleanup.api.endpoint # some URL endpoint to clean up resources.
           postPayload: '{ "someResourceId": 1234 }'
 ```
