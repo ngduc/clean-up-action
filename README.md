@@ -30,3 +30,8 @@ jobs:
           headers: '' # headers (JSON string).
           payload: '{ "someResourceId": 1234 }' # payload for url (JSON string).
 ```
+
+### Links
+
+- Article: [Github Action - Clean up resources](https://dev.to/ngduc/github-action-clean-up-resources-i70)
+- Usage example: [parcelui](https://github.com/ngduc/parcelui/blob/master/.github/workflows/ci.yml#L26-L34)
