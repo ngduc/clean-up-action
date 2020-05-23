@@ -9,10 +9,18 @@ inputs:
     description: 'number of milliseconds to wait'
     required: true
     default: '1000'
+  userId:
+    description: 'unique user id acquired from ngduc/clean-up-action'
+    required: true
+    default: ''
   expiryMins:
     description: 'expiry time in minutes'
     required: true
     default: 1440
+  getUrl:
+    description: 'URL to trigger with GET method after expiryMins'
+    required: false
+    default: ''
 outputs:
   time: # output will be available to future steps 
     description: 'The message to output'
