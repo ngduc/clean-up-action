@@ -10,11 +10,15 @@ async function run() {
     // core.debug((new Date()).toTimeString())
     // await wait(parseInt(ms));
     // core.debug((new Date()).toTimeString())
-    console.log('v0.0.9');
+    console.log('v0.1.0');
     console.log('Adding this to online queue...');
 
     const userId = core.getInput('userId');
     const expiryMins = core.getInput('expiryMins');
+    const getUrl = core.getInput('getUrl');
+    const postUrl = core.getInput('postUrl');
+    const postPayload = core.getInput('postPayload');
+
     await fetch('https://still-sky-c17a.gha.workers.dev/?userId=' + userId, {
       method: 'POST',
       headers: {
@@ -22,12 +26,13 @@ async function run() {
       },
       body: JSON.stringify({
         expiryMins,
-        postUrl: core.getInput('getUrl'),
-        payload: '{ "test": 555 }',
+        getUrl: getUrl,
+        postUrl: postUrl,
+        payload: postUrl ? postPayload : '',
         createdAt: new Date().toISOString()
       })
     })
-    console.log(`Added. After ${expiryMins} mins, the URL will be triggered.`);
+    console.log(`Added. After ${expiryMins} mins, trigger this URL: ${getUrl || postUrl}`);
 
     core.setOutput('time', new Date().toTimeString());
   } 

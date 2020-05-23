@@ -1,6 +1,6 @@
 {
   "name": "clean-up-action",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Clean up resources after X minutes.",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,7 @@
   },
   "homepage": "https://github.com/ngduc/clean-up-action",
   "dependencies": {
-    "@actions/core": "^1.1.1",
-    "isomorphic-fetch": "^2.2.1"
+    "@actions/core": "^1.1.1"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",
