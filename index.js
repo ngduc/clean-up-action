@@ -20,7 +20,7 @@ async function run() {
     const method = core.getInput('method') || 'GET';
 
     await fetch('https://clean-up-action-v1.gha.workers.dev/?projectId=' + projectId, {
-      method,
+      method: 'POST',
       headers: {
         "Content-Type": "application/json; charset=utf-8"
       },
