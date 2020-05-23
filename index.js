@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 // most @actions toolkit packages have async methods
 async function run() {
   try { 
-    // const ms = core.getInput('milliseconds');6
+    // const ms = core.getInput('milliseconds');
     // console.log(`Waiting ${ms} milliseconds ...`)
     // core.debug((new Date()).toTimeString())
     // await wait(parseInt(ms));
@@ -28,7 +28,7 @@ async function run() {
         expiryMins,
         getUrl: getUrl,
         postUrl: postUrl,
-        payload: postUrl ? postPayload : '',
+        postPayload: postUrl ? postPayload : '',
         createdAt: new Date().toISOString()
       })
     })
