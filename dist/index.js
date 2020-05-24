@@ -73,7 +73,7 @@ async function run() {
     // core.debug((new Date()).toTimeString())
     // await wait(parseInt(ms));
     // core.debug((new Date()).toTimeString())
-    console.log('Adding to online timer queue...');
+    console.log('Adding to the scheduler queue...');
 
     const projectId = core.getInput('projectId');
     const expiryMins = core.getInput('expiryMins');
@@ -100,7 +100,7 @@ async function run() {
     const resJson = await res.json();
     console.log('Scheduler payload', apiBody);
     console.log('Scheduler result', resJson);
-    console.log(`Added. After ${expiryMins} mins, trigger this URL: ${method} ${url} ${payload}`);
+    console.log(`After ${expiryMins} mins, trigger this URL: ${method} ${url} ${payload}`);
 
     core.setOutput('time', new Date().toTimeString());
   } 

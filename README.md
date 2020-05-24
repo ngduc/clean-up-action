@@ -3,13 +3,13 @@
   <a href="https://github.com/ngduc/clean-up-action/actions"><img alt="javscript-action status" src="https://github.com/ngduc/clean-up-action/workflows/units-test/badge.svg"></a>
 </p>
 
-# ngduc/clean-up-action
+# Clean-up-action
 
 Use this Github Action to clean up resources after X minutes by calling a URL (GET/POST)
 
 ### Use cases
 - After deploying to a demo environment, 1 day later, we want it to clean up itself by triggering an API endpoint to remove that demo environment.
-- After running some step, we want to trigger an endpoint to notify somebody, etc.
+- After running some steps, we want to trigger an endpoint to notify somebody, etc.
 
 ### Usage
 
@@ -30,6 +30,11 @@ jobs:
           headers: '' # headers (JSON string).
           payload: '{ "someResourceId": 1234 }' # payload for url (JSON string).
 ```
+
+### How It Works
+
+- The cleanup action is scheduled to run in X minutes.
+- There is a cronjob to check it continously. After X minutes, it will trigger your URL endpoint with parameters to clean up resources (or do something else).
 
 ### Links
 
