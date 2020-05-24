@@ -40,4 +40,4 @@ jobs:
 
 - Marketplace link: [marketplace/actions/clean-up-resources](https://github.com/marketplace/actions/clean-up-resources)
 - Article: [Github Action - Clean up resources](https://dev.to/ngduc/github-action-clean-up-resources-i70)
-- Usage example: [parcelui](https://github.com/ngduc/parcelui/blob/master/.github/workflows/ci.yml#L26-L34)
+- Usage example: [parcelui](https://github.com/ngduc/parcelui/blob/master/.github/workflows/ci.yml#L39-L47)
