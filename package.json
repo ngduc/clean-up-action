@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/ngduc/clean-up-action",
   "dependencies": {
-    "@actions/core": "^1.1.1",
+    "@actions/core": "^1.2.6",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
